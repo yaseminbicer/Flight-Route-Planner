@@ -12,6 +12,7 @@ public class LinkedList {
         this.head = newHead;
         if (currentHead != null) {
           this.head.setNextNode(currentHead);
+          //commit
         }
 	}
 

@@ -12,6 +12,9 @@ public class WelcomeScreen extends JFrame {
     private JPanel Panel2;
     private JButton exitButton;
     private JPanel MapPanel;
+    private JLabel ValueLabel;
+    private JLabel PathLabel;
+
 
     Graphics g;
 
@@ -19,16 +22,6 @@ public class WelcomeScreen extends JFrame {
         setContentPane(Panel2);
         Image background = Toolkit.getDefaultToolkit().createImage("images/background.jpg");
 
-        InitialBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (InitialBox.getSelectedIndex() == 1) {
-
-
-                }
-
-            }
-        });
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,12 +58,31 @@ public class WelcomeScreen extends JFrame {
                 CityBindings.addEdge(Rio, Jerusalem, 10000);
                 CityBindings.addEdge(Jerusalem, Istanbul, 1130);
                 CityBindings.addEdge(Budepeste, London, 1394);
+                String initialCity = (String) InitialBox.getSelectedItem();
+                String destinationCity = (String) DestinationBox.getSelectedItem();
+                Vertex initialVertex = findVertexByCityName(CityBindings, initialCity);
+                Vertex destinationVertex = findVertexByCityName(CityBindings, destinationCity);
                 Dijkstra dijkstra = new Dijkstra();
-                Dijkstra.shortestPathBetween(CityBindings,NewYork,Istanbul);
-                String City1 = CityBindings.
-                System.out.println(City1);
+                String shortestPath = dijkstra.shortestPathBetween(CityBindings, initialVertex, destinationVertex);
+                String[] result = shortestPath.split("\n");
+
+                // Set the shortest distance in ValueLabel
+                ValueLabel.setText(result[0]);
+
+                // Set the shortest path in PathLabel
+                PathLabel.setText(result[1]);
+
             }
+            private Vertex findVertexByCityName(Graph graph, String cityName) {
+                for (Vertex vertex : graph.getVertices()) {
+                    if (vertex.getData().equals(cityName)) {
+                        return vertex;
+                    }
+                }
+                return null; // Vertex not found
+        }
         });
+
     }
 
 

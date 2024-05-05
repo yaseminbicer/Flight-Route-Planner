@@ -12,6 +12,7 @@ public class Graph {
         this.isDirected = inputIsDirected;
     }
 
+
     public Vertex addVertex(String data) {
         Vertex newVertex = new Vertex(data);
         this.vertices.add(newVertex);

@@ -26,5 +26,5 @@ public class CityVertex{
         CityBindings.addEdge(Budepeste, London, 1394);
         Dijkstra dijkstra = new Dijkstra();
         Dijkstra.shortestPathBetween(CityBindings,NewYork,Istanbul);
-    }
+   }
 }

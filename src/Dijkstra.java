@@ -33,26 +33,30 @@ public class Dijkstra {
         return new Dictionary[]{distances, previous};
     }
 
-    public static void shortestPathBetween(Graph g, Vertex startingVertex, Vertex targetVertex) {
+    public static String shortestPathBetween(Graph g, Vertex startingVertex, Vertex targetVertex) {
         Dictionary[] dijkstraDictionaries = dijkstra(g, startingVertex);
-        Dictionary distances = dijkstraDictionaries[0];
-        Dictionary previous = dijkstraDictionaries[1];
+        Dictionary<String, Integer> distances = dijkstraDictionaries[0];
+        Dictionary<String, Vertex> previous = dijkstraDictionaries[1];
 
-        Integer distance = (Integer) distances.get(targetVertex.getData());
-        System.out.println("Shortest Distance between " + startingVertex.getData() + " and " + targetVertex.getData());
-        System.out.println(distance);
+        Integer distance = distances.get(targetVertex.getData());
+        StringBuilder shortestPath = new StringBuilder();
+        shortestPath.append("Shortest Distance between ").append(startingVertex.getData()).append(" and ").append(targetVertex.getData()).append(": ").append(distance).append("\n");
 
         ArrayList<Vertex> path = new ArrayList<>();
         Vertex v = targetVertex;
 
-        while (v.getData() != "Null") {
+        while (!v.getData().equals("Null")) {
             path.add(0, v);
-            v = (Vertex) previous.get(v.getData());
-        }
-        System.out.println("Shortest Path");
-        for (Vertex pathVertex : path) {
-            System.out.println(pathVertex.getData());
+            v = previous.get(v.getData());
         }
 
+        shortestPath.append("Shortest Path: ");
+        for (Vertex pathVertex : path) {
+            shortestPath.append(pathVertex.getData()).append(" -> ");
+        }
+        shortestPath.delete(shortestPath.length() - 4, shortestPath.length()); // Remove the last " -> "
+
+        return shortestPath.toString();
     }
+
 }

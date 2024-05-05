@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Graphics;
 
 public class WelcomeScreen extends JFrame {
 
@@ -13,12 +12,17 @@ public class WelcomeScreen extends JFrame {
     private JButton exitButton;
     private JLabel ValueLabel;
     private JLabel PathLabel;
-
-
-    Graphics g;
+    private JLabel MapLabel;
 
     public WelcomeScreen() {
         setContentPane(Panel2);
+        Panel2.setLocation(0,0);
+        ImageIcon background = new ImageIcon("images/background.jpg");
+        Image ScaledBg = background.getImage().getScaledInstance(650,400,Image.SCALE_AREA_AVERAGING);
+        ImageIcon nc = new ImageIcon(ScaledBg);
+        MapLabel.setIcon(nc);
+
+
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,6 +69,7 @@ public class WelcomeScreen extends JFrame {
                 ValueLabel.setText(result[0]);
                 PathLabel.setText(result[1]);
 
+
             }
             private Vertex findVertexByCityName(Graph graph, String cityName) {
                 for (Vertex vertex : graph.getVertices()) {
@@ -74,6 +79,7 @@ public class WelcomeScreen extends JFrame {
                 }
                 return null;
         }
+
         });
 
     }

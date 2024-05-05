@@ -1,7 +1,4 @@
 import javax.swing.*;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
@@ -14,6 +11,7 @@ public class Main {
                 panel2.setVisible(true);
                 panel2.setSize(800, 600);
                 panel2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                panel2.setResizable(false);
                 ImageIcon icon = new ImageIcon("images/icon.png");
                 panel2.setIconImage(icon.getImage());
 

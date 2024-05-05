@@ -11,7 +11,6 @@ public class WelcomeScreen extends JFrame {
     private JButton createRouteButton;
     private JPanel Panel2;
     private JButton exitButton;
-    private JPanel MapPanel;
     private JLabel ValueLabel;
     private JLabel PathLabel;
 
@@ -20,8 +19,6 @@ public class WelcomeScreen extends JFrame {
 
     public WelcomeScreen() {
         setContentPane(Panel2);
-        Image background = Toolkit.getDefaultToolkit().createImage("images/background.jpg");
-
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,11 +62,7 @@ public class WelcomeScreen extends JFrame {
                 Dijkstra dijkstra = new Dijkstra();
                 String shortestPath = dijkstra.shortestPathBetween(CityBindings, initialVertex, destinationVertex);
                 String[] result = shortestPath.split("\n");
-
-                // Set the shortest distance in ValueLabel
                 ValueLabel.setText(result[0]);
-
-                // Set the shortest path in PathLabel
                 PathLabel.setText(result[1]);
 
             }
@@ -79,7 +72,7 @@ public class WelcomeScreen extends JFrame {
                         return vertex;
                     }
                 }
-                return null; // Vertex not found
+                return null;
         }
         });
 

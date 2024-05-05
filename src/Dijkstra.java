@@ -54,7 +54,7 @@ public class Dijkstra {
         for (Vertex pathVertex : path) {
             shortestPath.append(pathVertex.getData()).append(" -> ");
         }
-        shortestPath.delete(shortestPath.length() - 4, shortestPath.length()); // Remove the last " -> "
+        shortestPath.delete(shortestPath.length() - 4, shortestPath.length());
 
         return shortestPath.toString();
     }

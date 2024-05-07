@@ -17,17 +17,36 @@
           <enabled value="true"/>
           <model>
             <item value="Select"/>
-            <item value="Istanbul"/>
-            <item value="London"/>
-            <item value="Jerusalem"/>
-            <item value="Amsterdam"/>
-            <item value="New York"/>
             <item value="Tokyo"/>
-            <item value="Wuhan"/>
-            <item value="Mumbai"/>
-            <item value="Sofia"/>
-            <item value="Budepeste"/>
-            <item value="Rio"/>
+            <item value="Suva"/>
+            <item value="Seul"/>
+            <item value="Sydney"/>
+            <item value="Port Moresby"/>
+            <item value="Manila"/>
+            <item value="New Delhi"/>
+            <item value="Taskent"/>
+            <item value="Ankara"/>
+            <item value="Makassar"/>
+            <item value="Nairobi"/>
+            <item value="Cairo"/>
+            <item value="Belgrad"/>
+            <item value="Berlin"/>
+            <item value="Roma"/>
+            <item value="Tunus"/>
+            <item value="Paris"/>
+            <item value="Madrid"/>
+            <item value="Launda"/>
+            <item value="Marakesh"/>
+            <item value="Buenos Aires"/>
+            <item value="Brasil"/>
+            <item value="Bogota"/>
+            <item value="Havana"/>
+            <item value="Washington DC"/>
+            <item value="Ottowa"/>
+            <item value="Mexico City"/>
+            <item value="Santiago"/>
+            <item value="Lima"/>
+            <item value="San Fransisco"/>
           </model>
         </properties>
       </component>
@@ -62,17 +81,36 @@
         <properties>
           <model>
             <item value="Select"/>
-            <item value="Istanbul"/>
-            <item value="London"/>
-            <item value="Jerusalem"/>
-            <item value="Amsterdam"/>
-            <item value="New York"/>
             <item value="Tokyo"/>
-            <item value="Wuhan"/>
-            <item value="Mumbai"/>
-            <item value="Sofia"/>
-            <item value="Budepeste"/>
-            <item value="Rio"/>
+            <item value="Suva"/>
+            <item value="Seul"/>
+            <item value="Sydney"/>
+            <item value="Port Moresby"/>
+            <item value="Manila"/>
+            <item value="New Delhi"/>
+            <item value="Taskent"/>
+            <item value="Ankara"/>
+            <item value="Makassar"/>
+            <item value="Nairobi"/>
+            <item value="Cairo"/>
+            <item value="Belgrad"/>
+            <item value="Berlin"/>
+            <item value="Roma"/>
+            <item value="Tunus"/>
+            <item value="Paris"/>
+            <item value="Madrid"/>
+            <item value="Launda"/>
+            <item value="Marakesh"/>
+            <item value="Buenos Aires"/>
+            <item value="Brasil"/>
+            <item value="Bogota"/>
+            <item value="Havana"/>
+            <item value="Washington DC"/>
+            <item value="Ottowa"/>
+            <item value="Mexico City"/>
+            <item value="Santiago"/>
+            <item value="Lima"/>
+            <item value="San Fransisco"/>
           </model>
         </properties>
       </component>

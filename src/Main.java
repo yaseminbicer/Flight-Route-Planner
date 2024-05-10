@@ -15,6 +15,7 @@ public class Main {
                 ImageIcon icon = new ImageIcon("images/icon.png");
                 panel2.setIconImage(icon.getImage());
 
+
             }
         });
     }

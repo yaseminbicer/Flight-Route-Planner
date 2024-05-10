@@ -2,26 +2,68 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class WelcomeScreen extends JFrame {
 
-    private JComboBox InitialBox;
-    private JComboBox DestinationBox;
+    private JComboBox<String> InitialBox;
+    private JComboBox<String> DestinationBox;
     private JButton createRouteButton;
     private JPanel Panel2;
     private JButton exitButton;
     private JLabel ValueLabel;
     private JLabel PathLabel;
     private JLabel MapLabel;
+    private JComboBox<String> Continent1;
+    private JComboBox<String> Continent2;
+    private ContinentTree continentTree;
 
     public WelcomeScreen() {
+        this.continentTree = new ContinentTree();
+
+        Continent1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selectedContinent = (String) Continent1.getSelectedItem();
+                if (!selectedContinent.equals("Select Continent")) {
+                    InitialCities(selectedContinent);
+                }
+            }
+
+            private void InitialCities(String continentName) {
+                InitialBox.removeAllItems();
+                Set<String> cities = continentTree.getCitiesByContinentSorted(continentName);
+                for (String city : cities) {
+                    InitialBox.addItem(city);
+                }
+            }
+        });
+
+        Continent2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selectedContinent = (String) Continent2.getSelectedItem();
+                if (!selectedContinent.equals("Select Continent")) {
+                    DestinationCities(selectedContinent);
+                }
+            }
+
+            private void DestinationCities(String continentName) {
+                DestinationBox.removeAllItems();
+                Set<String> cities = continentTree.getCitiesByContinentSorted(continentName);
+                for (String city : cities) {
+                    DestinationBox.addItem(city);
+                }
+            }
+        });
+
         setContentPane(Panel2);
         Panel2.setLocation(0,0);
         ImageIcon background = new ImageIcon("images/background.jpg");
         Image ScaledBg = background.getImage().getScaledInstance(650,400,Image.SCALE_AREA_AVERAGING);
         ImageIcon nc = new ImageIcon(ScaledBg);
         MapLabel.setIcon(nc);
-
 
         exitButton.addActionListener(new ActionListener() {
             @Override
@@ -78,11 +120,9 @@ public class WelcomeScreen extends JFrame {
                     }
                 }
                 return null;
-        }
+            }
+
 
         });
-
     }
-
-
 }
